@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llmenu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/roasted_chicken">
+
+    <Button
+        android:id="@+id/add_recipe"
+        style="@style/ButtonStyle"
+        android:layout_alignParentTop="true"
+        android:text="@string/add_recipe" />
+
+    <Button
+        android:id="@+id/view_recipes"
+        style="@style/ButtonStyle"
+        android:layout_below="@id/add_recipe"
+        android:text="@string/view_reciple" />
+
+    <Button
+        android:id="@+id/search_recipe"
+        style="@style/ButtonStyle"
+        android:layout_below="@id/view_recipes"
+        android:text="@string/search_recipe" />
+
+    <Button
+        android:id="@+id/exit"
+        style="@style/ButtonStyle"
+        android:layout_below="@id/search_recipe"
+        android:text="@string/exit" />
+</RelativeLayout>

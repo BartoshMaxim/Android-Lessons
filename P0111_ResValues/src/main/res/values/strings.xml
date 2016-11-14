@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ResValues</string>
+    <string name="tvTop">Top text</string>
+    <string name="btnTop">Top button</string>
+    <string name="tvBottom">Bottom text</string>
+    <string name="btnBottom">Bottom button</string>
+</resources>

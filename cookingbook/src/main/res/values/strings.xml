@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CookingBook</string>
+    <string name="add_recipe">Add recipe</string>
+    <string name="view_reciple">Recipes</string>
+    <string name="search_recipe">Search</string>
+    <string name="exit">Exit</string>
+    <string name="add">Add</string>
+    <string name="name_recipe_label">Name:</string>
+    <string name="description_recipe_label">Description:</string>
+</resources>
