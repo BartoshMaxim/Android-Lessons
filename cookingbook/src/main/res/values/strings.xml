@@ -7,4 +7,7 @@
     <string name="add">Add</string>
     <string name="name_recipe_label">Name:</string>
     <string name="description_recipe_label">Description:</string>
+    <string name="add_foto">Add foto recipe</string>
+    <string name="fill_form">Fill all fields!</string>
+    <string name="ok">OK</string>
 </resources>

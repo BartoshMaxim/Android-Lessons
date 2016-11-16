@@ -19,5 +19,17 @@ public class Utility {
         return BitmapFactory.decodeByteArray(image, 0, image.length);
     }
 
+    public static boolean checkRecipeObj(Recipe objRecipe) {
+        if (objRecipe.get_name() == null) {
+            return false;
+        }
+        else if(objRecipe.get_desription() == null){
+            return false;
+        }
+        else if(objRecipe.get_fotoRecipe() == null){
+            return false;
+        }
 
+        return true;
+    }
 }

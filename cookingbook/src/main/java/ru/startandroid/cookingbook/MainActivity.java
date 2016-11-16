@@ -10,7 +10,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button add_recipe;
-    Button view_recipe;
+    Button view_recipes;
     Button search_recipe;
     Button exit;
 
@@ -20,12 +20,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.main);
 
         add_recipe = (Button) findViewById(R.id.add_recipe);
-        view_recipe = (Button) findViewById(R.id.view_recipe);
+        view_recipes = (Button) findViewById(R.id.view_recipes);
         search_recipe = (Button) findViewById(R.id.search_recipe);
         exit = (Button) findViewById(R.id.exit);
 
         add_recipe.setOnClickListener(this);
-        view_recipe.setOnClickListener(this);
+        view_recipes.setOnClickListener(this);
         search_recipe.setOnClickListener(this);
         exit.setOnClickListener(this);
     }
