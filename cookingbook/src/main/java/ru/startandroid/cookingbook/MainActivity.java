@@ -19,10 +19,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        add_recipe = (Button) findViewById(R.id.add_recipe);
-        view_recipes = (Button) findViewById(R.id.view_recipes);
-        search_recipe = (Button) findViewById(R.id.search_recipe);
-        exit = (Button) findViewById(R.id.exit);
+        add_recipe = (Button) findViewById(R.id.add_recipeMainActivityButton);
+        view_recipes = (Button) findViewById(R.id.view_recipesMainActivityButton);
+        search_recipe = (Button) findViewById(R.id.search_recipeMainActivityButton);
+        exit = (Button) findViewById(R.id.exitMainActivityButton);
 
         add_recipe.setOnClickListener(this);
         view_recipes.setOnClickListener(this);
@@ -33,16 +33,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.add_recipe:
+            case R.id.add_recipeMainActivityButton:
                 Intent intent = new Intent(this,AddRecipeActivity.class);
                 startActivity(intent);
                 finish();
                 break;
-            case R.id.view_recipes:
+            case R.id.view_recipesMainActivityButton:
                 break;
-            case R.id.search_recipe:
+            case R.id.search_recipeMainActivityButton:
                 break;
-            case R.id.exit:
+            case R.id.exitMainActivityButton:
                 break;
         }
     }

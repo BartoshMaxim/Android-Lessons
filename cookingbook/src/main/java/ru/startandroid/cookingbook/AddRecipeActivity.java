@@ -34,10 +34,10 @@ public class AddRecipeActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_recipe);
 
-        add_recipe_submit = (Button) findViewById(R.id.add_recipe_submit);
-        name_text = (EditText) findViewById(R.id.name_text);
-        description_text = (EditText) findViewById(R.id.description_text);
-        add_foto = (Button) findViewById(R.id.add_foto);
+        add_recipe_submit = (Button) findViewById(R.id.add_recipe_submitAddRecipeActivity);
+        name_text = (EditText) findViewById(R.id.name_textAddRecipeActivity);
+        description_text = (EditText) findViewById(R.id.description_textAddRecipeActivity);
+        add_foto = (Button) findViewById(R.id.add_fotoAddRecipeActivity);
 
         add_recipe_submit.setOnClickListener(this);
         add_foto.setOnClickListener(this);
@@ -61,23 +61,25 @@ public class AddRecipeActivity extends AppCompatActivity implements View.OnClick
             String picturePath = cursor.getString(columnIndex);
             cursor.close();
             objRecipe.set_fotoRecipe(BitmapFactory.decodeFile(picturePath));
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage(R.string.fill_form);
+            builder.create();
         }
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.add_foto:
+            case R.id.add_fotoAddRecipeActivity:
                 Intent i = new Intent(
                         Intent.ACTION_PICK,
                         android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
 
                 startActivityForResult(i, RESULT_LOAD_IMAGE);
                 break;
-            case R.id.add_recipe:
+            case R.id.add_recipe_submitAddRecipeActivity:
                 objRecipe.set_name(name_text.getText().toString());
                 objRecipe.set_desription(description_text.getText().toString());
-
                 if (Utility.checkRecipeObj(objRecipe)) {
                     DatabaseRecipe dB = new DatabaseRecipe(this);
                     dB.addRecipe(objRecipe);
@@ -89,6 +91,11 @@ public class AddRecipeActivity extends AppCompatActivity implements View.OnClick
                     builder.setMessage(R.string.fill_form);
                     builder.create();
                 }
+                break;
+            case R.id.cancelAddRecipeActivity:
+                Intent intent = new Intent(this,MainActivity.class);
+                startActivity(intent);
+                finish();
                 break;
 
         }

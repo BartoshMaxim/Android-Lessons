@@ -10,4 +10,5 @@
     <string name="add_foto">Add foto recipe</string>
     <string name="fill_form">Fill all fields!</string>
     <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
 </resources>
