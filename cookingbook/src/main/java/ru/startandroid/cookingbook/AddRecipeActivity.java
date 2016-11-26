@@ -1,13 +1,14 @@
 package ru.startandroid.cookingbook;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +19,7 @@ public class AddRecipeActivity extends AppCompatActivity implements View.OnClick
 
     Button add_recipe_submit;
     Button add_foto;
+    Button cancel;
 
     TextView name_recipe_label;
     TextView description_recipe_label;
@@ -29,6 +31,8 @@ public class AddRecipeActivity extends AppCompatActivity implements View.OnClick
 
     private static int RESULT_LOAD_IMAGE = 1;
 
+    Bitmap fotoRecipe =null;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,9 +42,10 @@ public class AddRecipeActivity extends AppCompatActivity implements View.OnClick
         name_text = (EditText) findViewById(R.id.name_textAddRecipeActivity);
         description_text = (EditText) findViewById(R.id.description_textAddRecipeActivity);
         add_foto = (Button) findViewById(R.id.add_fotoAddRecipeActivity);
-
+        cancel = (Button) findViewById(R.id.cancelAddRecipeActivity);
         add_recipe_submit.setOnClickListener(this);
         add_foto.setOnClickListener(this);
+        cancel.setOnClickListener(this);
 
         objRecipe = new Recipe();
     }
@@ -59,11 +64,9 @@ public class AddRecipeActivity extends AppCompatActivity implements View.OnClick
 
             int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
             String picturePath = cursor.getString(columnIndex);
+            Log.d("!!!!!!!!!!!!!!!!!!!",picturePath);
             cursor.close();
-            objRecipe.set_fotoRecipe(BitmapFactory.decodeFile(picturePath));
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage(R.string.fill_form);
-            builder.create();
+            fotoRecipe=BitmapFactory.decodeFile(picturePath);
         }
     }
 
@@ -80,21 +83,29 @@ public class AddRecipeActivity extends AppCompatActivity implements View.OnClick
             case R.id.add_recipe_submitAddRecipeActivity:
                 objRecipe.set_name(name_text.getText().toString());
                 objRecipe.set_desription(description_text.getText().toString());
-                if (Utility.checkRecipeObj(objRecipe)) {
+                objRecipe.set_fotoRecipe(fotoRecipe);
+                if(fotoRecipe==null)
+                {
+                    add_recipe_submit.setText("Ooops");
+                }
+                else{
                     DatabaseRecipe dB = new DatabaseRecipe(this);
                     dB.addRecipe(objRecipe);
                     Intent intent = new Intent(this,MainActivity.class);
                     startActivity(intent);
                     finish();
-                } else {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                    builder.setMessage(R.string.fill_form);
-                    builder.create();
                 }
+                //if (Utility.checkRecipeObj(objRecipe)) {
+
+               // } else {
+                //    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                //    builder.setMessage(R.string.fill_form);
+                //    builder.create();
+               //}
                 break;
             case R.id.cancelAddRecipeActivity:
-                Intent intent = new Intent(this,MainActivity.class);
-                startActivity(intent);
+                Intent intentCancel = new Intent(this, MainActivity.class);
+                startActivity(intentCancel);
                 finish();
                 break;
 

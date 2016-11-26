@@ -34,11 +34,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.add_recipeMainActivityButton:
-                Intent intent = new Intent(this,AddRecipeActivity.class);
-                startActivity(intent);
+                Intent intentAddReciple = new Intent(this,AddRecipeActivity.class);
+                startActivity(intentAddReciple);
                 finish();
                 break;
             case R.id.view_recipesMainActivityButton:
+                Intent intentViewReciples = new Intent(this,ShowRecipleActivity.class);
+                startActivity(intentViewReciples);
+                finish();
                 break;
             case R.id.search_recipeMainActivityButton:
                 break;

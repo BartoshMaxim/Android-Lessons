@@ -28,6 +28,8 @@ public class DatabaseRecipe extends SQLiteOpenHelper {
     private static final String KEY_DESCRIPTION = "description";
     private static final String KEY_FOTO_RECIPE = "fotoRecipe";
 
+    public int countRecipes;
+
     public DatabaseRecipe(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -85,10 +87,11 @@ public class DatabaseRecipe extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
-
+        countRecipes = 0;
         // looping through all rows and adding to list
         if (cursor.moveToFirst()) {
             do {
+                countRecipes++;
                 Recipe recipe = new Recipe();
                 recipe.set_id(Integer.parseInt(cursor.getString(0)));
                 recipe.set_name(cursor.getString(1));

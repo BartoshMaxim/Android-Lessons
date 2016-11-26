@@ -2,7 +2,6 @@ package ru.startandroid.cookingbook;
 
 import android.graphics.Bitmap;
 
-
 public class Recipe {
 
     int _id;
@@ -16,14 +15,16 @@ public class Recipe {
         _fotoRecipe = null;
     }
 
-    public Recipe(int id, String name, String desription, Bitmap fotoRecipe) {
+    public Recipe(int id, String name, String desription, Bitmap fotoRecipe)
+    {
         this._id = id;
         this._name = name;
         this._desription = desription;
         this._fotoRecipe = fotoRecipe;
     }
 
-    public Recipe(String desription, String name, Bitmap fotoRecipe) {
+    public Recipe(String desription, String name, Bitmap fotoRecipe)
+    {
         this._name = name;
         this._desription = desription;
         this._fotoRecipe = fotoRecipe;
@@ -55,6 +56,11 @@ public class Recipe {
 
     public void set_desription(String _desription) {
         this._desription = _desription;
+    }
+
+    @Override
+    public String toString(){
+        return this._name;
     }
 
     public void set_fotoRecipe(Bitmap _fotoRecipe) {
