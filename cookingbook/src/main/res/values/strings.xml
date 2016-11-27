@@ -11,4 +11,6 @@
     <string name="fill_form">Fill all fields!</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
+    <string name="go_back">Go Back</string>
+    <string name="edit">Edit</string>
 </resources>

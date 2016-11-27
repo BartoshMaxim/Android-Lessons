@@ -25,8 +25,14 @@
         android:text="@string/search_recipe" />
 
     <Button
-        android:id="@+id/exitMainActivityButton"
+        android:id="@+id/editMainActivityButton"
         style="@style/ButtonStyle"
         android:layout_below="@id/search_recipeMainActivityButton"
+        android:text="@string/edit" />
+
+    <Button
+        android:id="@+id/exitMainActivityButton"
+        style="@style/ButtonStyle"
+        android:layout_below="@id/editMainActivityButton"
         android:text="@string/exit" />
 </RelativeLayout>
