@@ -44,6 +44,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 finish();
                 break;
             case R.id.search_recipeMainActivityButton:
+                Intent intentSearchReciples = new Intent(this,SearchActivity.class);
+                startActivity(intentSearchReciples);
+                finish();
                 break;
             case R.id.exitMainActivityButton:
                 break;

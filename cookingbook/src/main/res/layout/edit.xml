@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollViewShowRecipleActivity"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/edit_recipe_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/name_recipe_labelEditRecipeActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/name_recipe_label"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/description_recipe_labelEditRecipeActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name_textEditRecipeActivity"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:text="@string/description_recipe_label"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/name_textEditRecipeActivity"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/name_recipe_labelEditRecipeActivity"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/description_textEditRecipeActivity"
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_below="@id/description_recipe_labelEditRecipeActivity"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text"
+            android:inputType="textMultiLine" />
+
+        <ImageView
+            android:id="@+id/fotoEditRecipeActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/description_textEditRecipeActivity"/>
+
+        <Button
+            android:id="@+id/add_fotoEditRecipeActivity"
+            style="@style/ButtonStyle"
+            android:layout_below="@id/fotoEditRecipeActivity"
+            android:text="@string/edit_foto" />
+
+        <Button
+            android:id="@+id/add_recipe_submitEditRecipeActivity"
+            style="@style/ButtonStyle"
+            android:layout_below="@id/add_fotoEditRecipeActivity"
+            android:text="@string/add" />
+        <Button
+            android:id="@+id/cancelEditRecipeActivity"
+            style="@style/ButtonStyle"
+            android:layout_below="@id/add_recipe_submitEditRecipeActivity"
+            android:text="@string/cancel" />
+
+    </RelativeLayout>
+</ScrollView>

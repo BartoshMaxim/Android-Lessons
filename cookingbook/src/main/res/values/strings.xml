@@ -8,9 +8,11 @@
     <string name="name_recipe_label">Name:</string>
     <string name="description_recipe_label">Description:</string>
     <string name="add_foto">Add foto recipe</string>
+    <string name="edit_foto">Edit foto recipe</string>
     <string name="fill_form">Fill all fields!</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
     <string name="go_back">Go Back</string>
     <string name="edit">Edit</string>
+    <string name="search">Search:</string>
 </resources>
